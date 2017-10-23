@@ -18,23 +18,23 @@ Route::get('/', function () {
 // Crear una ruta de prueba
 Route::get('hola',function(){
   return 'Hola desde routes.php';
-});
+})->name('practica1');
 Route::get('persona/{nombre}/{edad}',function($nombre,$edad){
   return 'Mi nombre es '.$nombre.', tengo '.$edad.' años.';
-});
+})->name('practica2');
 Route::get('empleado/{nombre?}',function($nombre='Juan'){
   return 'Mi nombre es '.$nombre;
-});
+})->name('practica3');
 Route::group(['prefix'=>'saludo'],function(){
   Route::get('dia',function(){
     return 'Buenos dias';
-  });
+  })->name('saludo_dia');
   Route::get('tarde',function(){
     return 'Buenas tardes';
-  });
+  })->name('saludo_tarde');
   Route::get('noche',function(){
     return 'Buenas noches';
-  });
+  })->name('saludo_noche');
 });
 
 
@@ -49,4 +49,9 @@ Route::get('prueba/blade','PruebaController@saludoBlade');
 Route::get('prueba/persona/{nombre}/{edad}','PruebaController@datosBlade');
 Route::get('prueba/componentes',function(){
   return view('prueba.componentes');
+});
+
+// Rutas Admin
+Route::group(['prefix'=>'admin'],function(){
+  Route::get('/home','admin\HomeController@index')->name('home');
 });

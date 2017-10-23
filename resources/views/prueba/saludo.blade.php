@@ -4,4 +4,4 @@
 @section('title', 'Hola blade')
 @section('content')
   <h2>Hola desde una plantilla blade</h2>
-@stop
+@endsection
