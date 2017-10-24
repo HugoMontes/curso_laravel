@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Providers;
+namespace Cinema\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Blog\Http\Controllers\Auth;
+namespace Cinema\Http\Controllers\Auth;
 
-use Blog\Http\Controllers\Controller;
+use Cinema\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

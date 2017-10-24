@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Console\Commands;
+namespace Cinema\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

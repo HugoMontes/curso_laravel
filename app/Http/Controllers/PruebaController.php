@@ -1,7 +1,7 @@
 <?php
-namespace Blog\Http\Controllers;
+namespace Cinema\Http\Controllers;
 use Illuminate\Http\Request;
-use Blog\Http\Requests;
+use Cinema\Http\Requests;
 
 class PruebaController extends Controller{
 

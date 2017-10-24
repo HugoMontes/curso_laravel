@@ -1,10 +1,10 @@
 <?php
 
-namespace Blog\Http\Controllers\Auth;
+namespace Cinema\Http\Controllers\Auth;
 
-use Blog\User;
+use Cinema\User;
 use Validator;
-use Blog\Http\Controllers\Controller;
+use Cinema\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

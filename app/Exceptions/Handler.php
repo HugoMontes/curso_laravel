@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Exceptions;
+namespace Cinema\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

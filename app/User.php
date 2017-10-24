@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog;
+namespace Cinema;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers\admin;
+namespace Cinema\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
-use Blog\Http\Controllers\Controller;
+use Cinema\Http\Requests;
+use Cinema\Http\Controllers\Controller;
 
 class HomeController extends Controller{
   public function index(){
