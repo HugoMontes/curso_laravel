@@ -10,6 +10,7 @@
         <th>Nombre</th>
         <th>Correo</th>
         <th>Tipo</th>
+        <th>Accion</th>
       </tr>
     </thead>
     <tbody>
@@ -24,9 +25,27 @@
             @elseif($user->type =='member')
               <span class="label label-warning">{{ $user->type }}</span>
             @endif
+          </td>
+          <td>
+            <a href="{{ route('admin.user.destroy', $user->id) }}" class="btn btn-danger" title="Eliminar">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          </td>
         </tr>
       @endforeach
     </tbody>
   </table>
   {{ $users->links() }}
+@endsection
+@section('javascript')
+  <script type="text/javascript">
+    $('.btn-danger').on('click',function(event){
+      event.preventDefault();
+      var opcion=confirm('Esta seguro de eliminar el estudiante?');
+      if(opcion){
+        $(location).attr('href', $(this).attr('href'));
+      }
+      return false;
+    });
+  </script>
 @endsection

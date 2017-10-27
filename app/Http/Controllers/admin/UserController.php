@@ -43,12 +43,12 @@ class UserController extends Controller
        $user=new User($request->all());
        // Usar bcrypt para encriptar password
        $user->password=bcrypt($user->password);
-       // Alternativamente
-       // $user->password=bcrypt($request['password']);
-
        // Persistir usuario
        $user->save();
-       return 'Usuario registrado';
+       // Preparar el mensaje ha mostrar
+       flash('Se ha guardado '.$user->name.' exitosamente.')->success();
+       // Redireccionar al listado de usuarios
+       return redirect()->route('admin.user.index');
     }
 
     /**
@@ -91,8 +91,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        // Buscar usuario en la base dedatos
+        $user=User::find($id);
+        // Eliminar el usuario
+        $user->delete();
+        // Preparar el mensaje ha mostrar
+        flash('Se ha eliminado '.$user->name.' exitosamente.')->success();
+        // Redireccionar al listado de usuarios
+        return redirect()->route('admin.user.index');
     }
 }

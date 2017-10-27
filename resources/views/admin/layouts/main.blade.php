@@ -15,6 +15,7 @@
     {!! Html::style('admin/dist/css/sb-admin-2.css') !!}
     <!-- Custom Fonts -->
     {!! Html::style('admin/vendor/font-awesome/css/font-awesome.min.css') !!}
+    @yield('styles')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,6 +29,7 @@
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
+                @include('flash::message')
                 @yield('content')
             </div>
             <!-- /.container-fluid -->
@@ -43,5 +45,6 @@
     {!! Html::script('admin/vendor/metisMenu/metisMenu.min.js') !!}
     <!-- Custom Theme JavaScript -->
     {!! Html::script('admin/dist/js/sb-admin-2.js') !!}
+    @yield('javascript')
 </body>
 </html>
