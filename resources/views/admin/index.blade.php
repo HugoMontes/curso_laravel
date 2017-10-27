@@ -14,4 +14,5 @@
   <a href="{{ route('saludo_dia') }}">6. Buenos dias</a><br/>
   <a href="{{ route('saludo_tarde') }}">7. Buenas tardes</a><br/>
   <a href="{{ route('saludo_noche') }}">8. Buenas noches</a><br/>
+  <a href="{{ route('admin.user.index') }}">1. Usuarios</a><br/>
 @endsection

@@ -17,6 +17,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            // Crear un campo que permita solo dos opciones
+            // miembro y admistrador, al crear un nuevo usuario
+            // el valor por defecto sera miembro
+            $table->enum('type', ['member', 'admin'])->default('member');
             $table->rememberToken();
             $table->timestamps();
         });

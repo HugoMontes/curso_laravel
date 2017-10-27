@@ -53,5 +53,6 @@ Route::get('prueba/componentes',function(){
 
 // Rutas Admin
 Route::group(['prefix'=>'admin'],function(){
-  Route::get('/home','admin\HomeController@index')->name('home');
+  Route::get('home','admin\HomeController@index')->name('home');
+  Route::resource('user', 'admin\UserController');
 });
