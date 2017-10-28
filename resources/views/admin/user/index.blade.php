@@ -30,6 +30,9 @@
             <a href="{{ route('admin.user.destroy', $user->id) }}" class="btn btn-danger" title="Eliminar">
               <span class="glyphicon glyphicon-trash"></span>
             </a>
+            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-primary" title="Editar">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
           </td>
         </tr>
       @endforeach

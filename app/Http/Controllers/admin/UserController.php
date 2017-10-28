@@ -8,6 +8,8 @@ use Cinema\Http\Requests;
 use Cinema\Http\Controllers\Controller;
 // Importar la clase User
 use Cinema\User;
+// Importar la clase UserRequest
+use Cinema\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -38,7 +40,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(UserRequest $request){
        // Recuperar todos los datos del formulario en un ojbeto User
        $user=new User($request->all());
        // Usar bcrypt para encriptar password
@@ -68,9 +70,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id){
+        $user=User::find($id);
+        return view('admin.user.edit')->with('user',$user);
     }
 
     /**
@@ -80,9 +82,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id){
+        // Recuperar el usuario
+        $user=User::find($id);
+        // Actualizar los datos con los del formulario
+        $user->update($request->all());
+
+        // Opcionalmente se pueden recuperar dato por datos
+        // $user->name=$request->name;
+        // $user->email=$request->email;
+        // $user->password=$request->password;
+        // $user->type=$request->type;
+        // $user->save();
+
+        // Preparar el mensaje ha mostrar
+        flash('Se ha editado '.$user->name.' exitosamente.')->success();
+        // Redireccionar al listado de usuarios
+        return redirect()->route('admin.user.index');
     }
 
     /**
