@@ -1,6 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Escritorio')
 @section('content')
+  <h3>Bienvenido {{ Auth::user()->name }}</h3>
   {{-- Llamando por la url --}}
   <a href="{{ url('hola') }}">1. Hola mundo (por url)</a><br/>
   <a href="{{ route('practica1') }}">2. Hola mundo (por nombre de ruta)</a><br/>
@@ -14,4 +15,6 @@
   <a href="{{ route('saludo_tarde') }}">7. Buenas tardes</a><br/>
   <a href="{{ route('saludo_noche') }}">8. Buenas noches</a><br/>
   <a href="{{ route('admin.user.index') }}">1. Usuarios</a><br/>
+  <a href="{{ route('admin.user.index') }}">1. Usuarios</a><br/>
+  <a href="{{ url('/logout') }}">Cerrar sesion</a>
 @endsection
