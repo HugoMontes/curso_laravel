@@ -30,6 +30,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 @include('flash::message')
+                <h2>@yield('title', 'Default')</h2>
                 @yield('content')
             </div>
             <!-- /.container-fluid -->

@@ -1,7 +1,6 @@
 @extends('admin.layouts.main')
 @section('title', 'Escritorio')
 @section('content')
-  <h2>MENU PRINCIPAL</h2>
   {{-- Llamando por la url --}}
   <a href="{{ url('hola') }}">1. Hola mundo (por url)</a><br/>
   <a href="{{ route('practica1') }}">2. Hola mundo (por nombre de ruta)</a><br/>

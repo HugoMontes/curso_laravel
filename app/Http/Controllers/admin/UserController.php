@@ -88,6 +88,10 @@ class UserController extends Controller
         // Actualizar los datos con los del formulario
         $user->update($request->all());
 
+        // Otra opcion es mediante la funcion fill
+        // $user->fill($request->all());
+        // $user->save();
+
         // Opcionalmente se pueden recuperar dato por datos
         // $user->name=$request->name;
         // $user->email=$request->email;

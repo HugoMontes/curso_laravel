@@ -56,4 +56,6 @@ Route::group(['prefix'=>'admin'],function(){
   Route::get('home','admin\HomeController@index')->name('home');
   Route::resource('user', 'admin\UserController');
   Route::get('user/{id}/destroy','admin\UserController@destroy')->name('admin.user.destroy');
+  Route::resource('genero', 'admin\GeneroController');
+  Route::get('genero/{id}/destroy','admin\GeneroController@destroy')->name('admin.genero.destroy');
 });

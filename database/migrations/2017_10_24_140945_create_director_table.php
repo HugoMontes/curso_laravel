@@ -27,8 +27,8 @@ class CreateDirectorTable extends Migration
           $table->integer('pelicula_id')->unsigned();
           $table->integer('director_id')->unsigned();
           // Relacionar las tablas
-          $table->foreign('pelicula_id')->references('id')->on('peliculas');
-          $table->foreign('director_id')->references('id')->on('directores');
+          $table->foreign('pelicula_id')->references('id')->on('peliculas')->onDelete('cascade');
+          $table->foreign('director_id')->references('id')->on('directores')->onDelete('cascade');
           $table->timestamps();
         });
     }
@@ -38,8 +38,9 @@ class CreateDirectorTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
+        // En caso de que se haga un refresh eliminar de esta manera
+        Schema::drop('pelicula_director');
         Schema::drop('directores');
     }
 }

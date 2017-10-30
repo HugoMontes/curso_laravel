@@ -1,16 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Nuevo Usuario')
 @section('content')
-  <h2>Nuevo Usuario</h2>
-  @if(count($errors)>0)
-    <div class="alert alert-danger" role="alert">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endif
+  @include('admin.layouts.errors')
   {!! Form::open(['route'=>'admin.user.store', 'method'=>'POST']) !!}
     <div class="form-group">
         {{-- Form::label('nombre_atributo_modelo', 'valor_a_mostrar') --}}
