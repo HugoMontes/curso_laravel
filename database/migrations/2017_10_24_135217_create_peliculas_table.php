@@ -20,8 +20,11 @@ class CreatePeliculasTable extends Migration
           $table->date('estreno');
           $table->timestamps();
           // Agregar la relación 1aN con la tabla generos
-          $table->integer('genero_id')->unsigned();
+          $table->integer('genero_id')->unsigned(); // no num. negativos
           $table->foreign('genero_id')->references('id')->on('generos')->onDelete('cascade');
+          // Agregar la relación 1aN con la tabla users
+          $table->integer('user_id')->unsigned();
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       });
     }
 

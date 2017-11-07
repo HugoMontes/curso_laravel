@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    // Un usuario puede adicionar muchas peliculas
+    public function peliculas(){
+      // Retornar el tipo de relación indicando el Modelo
+      return $this->hasMany('Cinema\Pelicula');
+    }
 }

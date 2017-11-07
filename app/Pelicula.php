@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pelicula extends Model{
   protected $table='peliculas';
-  protected $fillable=['titulo','costo','resumen','estreno','genero_id'];
+  protected $fillable=['titulo','costo','resumen','estreno','genero_id','user_id'];
+
+  // Una pelicula pertenece a un usuario
+  public function user(){
+    return $this->belongsTo('Cinema\User');
+  }
 
   // Una pelicula pertenece a un genero
   public function genero(){
