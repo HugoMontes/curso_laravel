@@ -58,6 +58,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
   Route::get('user/{id}/destroy','admin\UserController@destroy')->name('admin.user.destroy');
   Route::resource('genero', 'admin\GeneroController');
   Route::get('genero/{id}/destroy','admin\GeneroController@destroy')->name('admin.genero.destroy');
+  Route::resource('director', 'admin\DirectorController');
+  Route::get('director/{id}/destroy','admin\DirectorController@destroy')->name('admin.director.destroy');
 });
 
 Route::auth();

@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
         {!! Form::label('type', 'Tipo') !!}
-        {!! Form::select('type', [''=>'Seleccione un nivel','member'=>'Miembro', 'admin'=>'Administrador'], null, ['class'=>'form-control']) !!}
+        {!! Form::select('type', ['member'=>'Miembro', 'admin'=>'Administrador'], null, ['class'=>'form-control','placeholder'=>'Seleccione una opcion','required']) !!}
     </div>
     <div class="form-group">
       {!! Form::submit('Guardar',['class'=>'btn btn-primary']) !!}

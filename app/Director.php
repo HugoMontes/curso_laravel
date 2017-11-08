@@ -12,4 +12,8 @@ class Director extends Model{
   public function peliculas(){
     return $this->belongsToMany('Cinema\Pelicula');
   }
+
+  public function scopeSearch($query, $nombre){
+    return $query->where('nombre', 'LIKE', '%'.$nombre.'%');
+  }
 }
