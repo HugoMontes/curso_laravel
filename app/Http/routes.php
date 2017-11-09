@@ -60,6 +60,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
   Route::get('genero/{id}/destroy','admin\GeneroController@destroy')->name('admin.genero.destroy');
   Route::resource('director', 'admin\DirectorController');
   Route::get('director/{id}/destroy','admin\DirectorController@destroy')->name('admin.director.destroy');
+  Route::resource('pelicula', 'admin\PeliculaController');
 });
 
 Route::auth();

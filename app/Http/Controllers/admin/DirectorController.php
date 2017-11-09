@@ -87,8 +87,8 @@ class DirectorController extends Controller
           'nombre' => 'required|unique:directores',
       ]);
       $director=Director::find($id);
-      $director->fill($request->all());
-      $director->save();
+      // Actualizando con la funcion update
+      $director->update($request->all());
       flash('Se ha editado '.$director->nombre.' exitosamente.')->success();
       return redirect()->route('admin.director.index');
     }

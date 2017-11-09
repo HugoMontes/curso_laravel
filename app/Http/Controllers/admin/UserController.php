@@ -86,18 +86,18 @@ class UserController extends Controller
         // Recuperar el usuario
         $user=User::find($id);
         // Actualizar los datos con los del formulario
-        $user->update($request->all());
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->type=$request->type;
+        $user->save();
 
         // Otra opcion es mediante la funcion fill
         // $user->fill($request->all());
         // $user->save();
 
-        // Opcionalmente se pueden recuperar dato por datos
-        // $user->name=$request->name;
-        // $user->email=$request->email;
-        // $user->password=$request->password;
-        // $user->type=$request->type;
-        // $user->save();
+        // Recuperar y actualizar datos
+        // $user->update($request->all());
 
         // Preparar el mensaje ha mostrar
         flash('Se ha editado '.$user->name.' exitosamente.')->success();
