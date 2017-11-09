@@ -14,6 +14,8 @@ use Cinema\Genero;
 use Cinema\Director;
 // Importar clase Imagen
 use Cinema\Imagen;
+// Importar clase de validacion
+use Cinema\Http\Requests\PeliculaRequest;
 
 class PeliculaController extends Controller
 {
@@ -45,7 +47,7 @@ class PeliculaController extends Controller
   * @param  \Illuminate\Http\Request  $request
   * @return \Illuminate\Http\Response
   */
-  public function store(Request $request){
+  public function store(PeliculaRequest $request){
     // Recuperar los datos del formulario
     $pelicula=new Pelicula($request->all());
     // Recuperar el id del usuario autenticado
