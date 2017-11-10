@@ -1,6 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Editar Usuario '.$user->name)
 @section('content')
+  {{-- La ruta update recibe un objeto como parametro --}}
   {!! Form::open(['route'=>['admin.user.update', $user], 'method'=>'PUT']) !!}
     <div class="form-group">
         {!! Form::label('name', 'Nombre') !!}

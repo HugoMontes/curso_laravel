@@ -28,4 +28,9 @@ class Pelicula extends Model{
     // belongsToMany('NombreModelo', 'tabla_relacion')
     return $this->belongsToMany('Cinema\Director', 'pelicula_director')->withTimestamps();
   }
+
+  // Definir un scope
+  public function scopeSearch($query, $titulo){
+    return $query->where('titulo', 'LIKE', '%'.$titulo.'%');
+  }
 }

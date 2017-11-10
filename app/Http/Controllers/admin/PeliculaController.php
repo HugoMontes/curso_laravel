@@ -24,8 +24,19 @@ class PeliculaController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function index(){
-    return view('admin.pelicula.index');
+  public function index(Request $request){
+    // Obtener las peliculas
+    // $peliculas=Pelicula::orderBy('id','DESC')->paginate(5);
+    // Obtener las peliculas con scope
+    $peliculas=Pelicula::search($request->titulo)->orderBy('id','DESC')->paginate(5);
+    // Llamar las relaciones para obtener genero y usuario
+    // de cada una de las peliculas
+    $peliculas->each(function($peliculas){
+      $peliculas->genero;
+      $peliculas->user;
+    });
+    // Probar con dd($peliculas);
+    return view('admin.pelicula.index')->with('peliculas',$peliculas);
   }
 
   /**
@@ -37,7 +48,7 @@ class PeliculaController extends Controller
     // lists(valor_mostrar, indice): Devuelve un array asociativo
     $generos=Genero::orderBy('genero','ASC')->lists('genero','id');
     $directores=Director::orderBy('nombre','ASC')->lists('nombre','id');
-    // Probar con dd($generos)
+    // Probar con dd($generos);
     return view('admin.pelicula.create')->with('generos',$generos)->with('directores',$directores);
   }
 
@@ -106,9 +117,19 @@ class PeliculaController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function edit($id)
-  {
-    //
+  public function edit($id){
+    $pelicula=Pelicula::find($id);
+    $generos=Genero::orderBy('genero','ASC')->lists('genero','id');
+    $directores=Director::orderBy('nombre','ASC')->lists('nombre','id');
+    // Para los directores seleccionados
+    // Convertir el listado de objetos en un array simple
+    $mis_directores=$pelicula->directores->lists('id')->ToArray();
+    // Probar con dd($mis_directores);
+    return view('admin.pelicula.edit')
+          ->with('pelicula',$pelicula)
+          ->with('generos',$generos)
+          ->with('directores',$directores)
+          ->with('mis_directores',$mis_directores);
   }
 
   /**
@@ -118,9 +139,17 @@ class PeliculaController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id)
-  {
-    //
+  public function update(Request $request, $id){
+    // Probar con dd($request->all());
+    $pelicula=Pelicula::find($id);
+    // Actualizar pelicula
+    $pelicula->update($request->all());
+    // Actualizar tabla pivote
+    $pelicula->directores()->sync($request->directores);
+    // Preparar el mensaje ha mostrar
+    flash('Se ha editado '.$pelicula->titulo.' exitosamente.')->success();
+    // Redireccionar al listado de usuarios
+    return redirect()->route('admin.pelicula.index');
   }
 
   /**
@@ -129,8 +158,10 @@ class PeliculaController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function destroy($id)
-  {
-    //
+  public function destroy($id){
+    $pelicula=Pelicula::find($id);
+    $pelicula->delete();
+    flash('Se ha eliminado '.$pelicula->titulo.' exitosamente.')->success();
+    return redirect()->route('admin.pelicula.index');
   }
 }

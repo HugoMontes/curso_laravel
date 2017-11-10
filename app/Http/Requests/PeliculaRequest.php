@@ -27,7 +27,7 @@ class PeliculaRequest extends Request
             'titulo'   =>'min:8|max:250|required|unique:peliculas',
             'genero_id'=>'required',
             'resumen'  =>'min:10|required',
-            'imagen'   =>'required',
+            'imagen'   =>'image|required',
         ];
     }
 }

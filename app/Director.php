@@ -12,7 +12,7 @@ class Director extends Model{
   public function peliculas(){
     return $this->belongsToMany('Cinema\Pelicula');
   }
-
+  // Definir un scope
   public function scopeSearch($query, $nombre){
     return $query->where('nombre', 'LIKE', '%'.$nombre.'%');
   }

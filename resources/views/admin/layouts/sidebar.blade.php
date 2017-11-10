@@ -236,16 +236,58 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Escritorio</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-film fa-fw"></i> Cinema<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Flot Charts</a>
+                            <a href="#">Peliculas <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Listar</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nuevo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
                         </li>
                         <li>
-                            <a href="morris.html">Morris.js Charts</a>
+                            <a href="#">Generos <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Listar</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nuevo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
+                        </li>
+                        <li>
+                            <a href="#">Directores <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Listar</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nuevo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="flot.html">Listar</a>
+                        </li>
+                        <li>
+                            <a href="morris.html">Nuevo</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
