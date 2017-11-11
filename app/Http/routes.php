@@ -62,6 +62,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
   Route::get('director/{id}/destroy','admin\DirectorController@destroy')->name('admin.director.destroy');
   Route::resource('pelicula', 'admin\PeliculaController');
   Route::get('pelicula/{id}/destroy','admin\PeliculaController@destroy')->name('admin.pelicula.destroy');
+  Route::get('imagen','admin\ImagenController@index')->name('admin.imagen.index');
 });
 
 Route::auth();

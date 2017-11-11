@@ -22,6 +22,10 @@
         {!! Form::select('type', ['member'=>'Miembro', 'admin'=>'Administrador'], null, ['class'=>'form-control','placeholder'=>'Seleccione una opcion','required']) !!}
     </div>
     <div class="form-group">
+      {{-- Pagina anterior --}}
+      <a href="{{ redirect()->getUrlGenerator()->previous() }}" class="btn btn-default">
+        <i class="fa fa-times" aria-hidden="true"></i> Cancelar
+      </a>
       {!! Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
     </div>
   {!! Form::close() !!}
