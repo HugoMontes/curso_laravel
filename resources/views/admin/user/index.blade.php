@@ -37,7 +37,9 @@
       @endforeach
     </tbody>
   </table>
-  {{ $users->links() }}
+  <div class="text-center">
+      {{ $users->links() }}
+  </div>
 @endsection
 @section('javascript')
   <script type="text/javascript">

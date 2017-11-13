@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// RUTAS FRONTEND
+Route::get('/', 'FrontController@index')->name('front.index');
+Route::get('reviews', 'FrontController@reviews')->name('front.reviews');
 
 // Crear una ruta de prueba
 Route::get('hola',function(){

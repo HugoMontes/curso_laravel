@@ -15,4 +15,7 @@
       </div>
     @endforeach
   </div>
+  <div class="text-center">
+      {{ $imagenes->links() }}
+  </div>
 @endsection
