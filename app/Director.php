@@ -10,10 +10,14 @@ class Director extends Model{
 
   // Un director tiene muchas peliculas
   public function peliculas(){
-    return $this->belongsToMany('Cinema\Pelicula');
+    return $this->belongsToMany('Cinema\Pelicula', 'pelicula_director');
   }
   // Definir un scope
   public function scopeSearch($query, $nombre){
     return $query->where('nombre', 'LIKE', '%'.$nombre.'%');
+  }
+
+  public function scopeSearchDirector($query, $nombre){
+    return $query->where('nombre','=',$nombre);
   }
 }

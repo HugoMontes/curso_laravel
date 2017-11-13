@@ -14,7 +14,8 @@
   <a href="{{ route('saludo_dia') }}">6. Buenos dias</a><br/>
   <a href="{{ route('saludo_tarde') }}">7. Buenas tardes</a><br/>
   <a href="{{ route('saludo_noche') }}">8. Buenas noches</a><br/>
-  <a href="{{ route('admin.user.index') }}">1. Usuarios</a><br/>
-  <a href="{{ route('admin.user.index') }}">1. Usuarios</a><br/>
+  @if(Auth::user()->is_admin())
+    <a href="{{ route('admin.user.index') }}">Usuarios</a><br/>
+  @endif
   <a href="{{ url('/logout') }}">Cerrar sesion</a>
 @endsection

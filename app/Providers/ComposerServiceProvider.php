@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot(){
         // composer([listaDeVistasDondeMostrar], ClaseDeConsulta)
-        view()->composer(['front.reviews'], 'Cinema\Http\ViewComposers\AsideComposer');
+        view()->composer(['front.reviews', 'front.pelicula'], 'Cinema\Http\ViewComposers\AsideComposer');
     }
 
     /**

@@ -14,6 +14,9 @@
 // RUTAS FRONTEND
 Route::get('/', 'FrontController@index')->name('front.index');
 Route::get('reviews', 'FrontController@reviews')->name('front.reviews');
+Route::get('generos/{genero}', 'FrontController@searchGenero')->name('front.search.genero');
+Route::get('directores/{nombre}', 'FrontController@searchDirector')->name('front.search.director');
+Route::get('peliculas/{id}', 'FrontController@viewPelicula')->name('front.view.pelicula');
 
 // Crear una ruta de prueba
 Route::get('hola',function(){
@@ -54,8 +57,10 @@ Route::get('prueba/componentes',function(){
 // Rutas Admin
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
   Route::get('home','admin\HomeController@index')->name('home');
-  Route::resource('user', 'admin\UserController');
-  Route::get('user/{id}/destroy','admin\UserController@destroy')->name('admin.user.destroy');
+  Route::group(['middleware'=>'admin'],function(){
+    Route::resource('user', 'admin\UserController');
+    Route::get('user/{id}/destroy','admin\UserController@destroy')->name('admin.user.destroy');
+  });
   Route::resource('genero', 'admin\GeneroController');
   Route::get('genero/{id}/destroy','admin\GeneroController@destroy')->name('admin.genero.destroy');
   Route::resource('director', 'admin\DirectorController');

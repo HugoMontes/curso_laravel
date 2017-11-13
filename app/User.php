@@ -28,4 +28,8 @@ class User extends Authenticatable
       // Retornar el tipo de relación indicando el Modelo
       return $this->hasMany('Cinema\Pelicula');
     }
+    // Verifica si es un admin
+    public function is_admin(){
+      return $this->type==='admin';
+    }
 }

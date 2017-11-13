@@ -24,7 +24,9 @@
   								<a href="single.html"><img src="{{ asset('imagenes/pelicula/'.$pelicula->imagenes[0]->nombre) }}" alt="" /></a>
   							</div>
   							<div class="review-info">
-  								<a class="span" href="single.html">{{ $pelicula->titulo }}</a>
+  								<a class="span" href="{{ route('front.view.pelicula', $pelicula->id) }}">
+											{{ $pelicula->titulo }}
+									</a>
   								<p class="dirctr"><a href="">Creado </a>{{ $pelicula->created_at->diffForHumans() }}</p>
   								<p class="ratingview">Critic's Rating:</p>
   								<div class="rating">
@@ -77,12 +79,22 @@
                       <td>Will Smith, Margot Robbie, Adrian Martinez, Rodrigo Santoro, BD Wong, Robert Taylor</td>
                     </tr>
                     <tr>
-                      <td>DIRECTION:</td>
-                      <td>Glenn Ficarra, John Requa</td>
+                      <td>DIRECTOR(ES):</td>
+                      <td>
+												@foreach ($pelicula->directores as $director)
+													<a href="{{ route('front.search.director', $director->nombre) }}">
+														{{ $director->nombre }}
+													</a>,
+												@endforeach
+											</td>
                     </tr>
                     <tr>
                       <td>GENERO:</td>
-                      <td>{{ $pelicula->genero->genero }}</td>
+                      <td>
+												<a href="{{ route('front.search.genero', $pelicula->genero->genero) }}">
+													{{ $pelicula->genero->genero }}
+												</a>
+											</td>
                     </tr>
                     <tr>
                       <td>DURATION:</td>

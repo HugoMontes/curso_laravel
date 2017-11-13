@@ -14,4 +14,8 @@ class Genero extends Model{
       // retornar el tipo de relacion
       return $this->hasMany('Cinema\Pelicula');
     }
+
+    public function scopeSearchGenero($query, $genero){
+      return $query->where('genero','=',$genero);
+    }
 }

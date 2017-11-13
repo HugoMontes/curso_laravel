@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>@yield('title')</title>
+<title>@yield('title') | Cinema</title>
 {!! Html::style('front/css/bootstrap.css') !!}
 <!-- Custom Theme files -->
 {!! Html::style('front/css/style.css') !!}
