@@ -24,7 +24,7 @@ $factory->define(Cinema\User::class, function (Faker\Generator $faker) {
 });
 
 // Crear factory para director
-// Para ejecutar el mismo se debera crear su clse DirectorSeeder
+// Para ejecutar el mismo se debera crear su clase DirectorSeeder
 $factory->define(Cinema\Director::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->firstname.' '.$faker->lastname,
