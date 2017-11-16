@@ -23,7 +23,7 @@
 				@foreach ($peliculas as $pelicula)
 					<div class="review">
 						<div class="movie-pic">
-							<a href="single.html"><img src="{{ asset('imagenes/pelicula/'.$pelicula->imagenes[0]->nombre) }}" alt="" /></a>
+							<a href="{{ route('front.view.pelicula', $pelicula->id) }}"><img src="{{ asset('imagenes/pelicula/'.$pelicula->imagenes[0]->nombre) }}" alt="" /></a>
 						</div>
 						<div class="review-info">
 							<a class="span" href="{{ route('front.view.pelicula', $pelicula->id) }}">
@@ -271,7 +271,6 @@
 						</ul>
 					</div>
 					<!---->
-
 				</div>
 				<div class="clearfix"></div>
 			</div>

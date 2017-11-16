@@ -33,8 +33,8 @@ class FrontController extends Controller{
 
   public function searchGenero($genero){
     // Probar dd($genero);
-    // first(): Devuelve el primero elemento de una coleccion en un objeto,
-    //  ya que el nombre del genero es unico segun la validacion.
+    // first(): Devuelve el primer elemento de una coleccion en un objeto,
+    //  ya que el nombre del genero es unico segun la validacion request.
     $genero=Genero::SearchGenero($genero)->first();
     // Obtenemos una coleccion con todas las peliculas del genero
     $peliculas=$genero->peliculas()->paginate(5);

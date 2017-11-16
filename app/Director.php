@@ -16,7 +16,7 @@ class Director extends Model{
   public function scopeSearch($query, $nombre){
     return $query->where('nombre', 'LIKE', '%'.$nombre.'%');
   }
-
+  // Funcion de busqueda 
   public function scopeSearchDirector($query, $nombre){
     return $query->where('nombre','=',$nombre);
   }
