@@ -4,7 +4,9 @@
   <div class="header">
     <div class="top-header">
       <div class="logo">
-        <a href="index.html"><img src="{{ asset('front/images/logo.png') }}" alt="" /></a>
+        <a href="index.html">
+          <img src="{{ asset('front/images/logo.png') }}" alt="" />
+        </a>
         <p>Movie Theater</p>
       </div>
       <div class="search">
@@ -28,14 +30,13 @@
   </div>
   <div class="review-slider">
      <ul id="flexiselDemo1">
-    <li><img src="{{ asset('front/images/r1.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/r2.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/r3.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/r4.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/r5.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/r6.jpg') }}" alt=""/></li>
-  </ul>
-
+      <li><img src="{{ asset('front/images/r1.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/r2.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/r3.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/r4.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/r5.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/r6.jpg') }}" alt=""/></li>
+    </ul>
   </div>
   <div class="video">
     <iframe  src="https://www.youtube.com/embed/2LqzF5WauAw" frameborder="0" allowfullscreen></iframe>
@@ -66,12 +67,11 @@
   </div>
   <div class="more-reviews">
      <ul id="flexiselDemo2">
-    <li><img src="{{ asset('front/images/m1.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/m2.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/m3.jpg') }}" alt=""/></li>
-    <li><img src="{{ asset('front/images/m4.jpg') }}" alt=""/></li>
-  </ul>
-
+      <li><img src="{{ asset('front/images/m1.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/m2.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/m3.jpg') }}" alt=""/></li>
+      <li><img src="{{ asset('front/images/m4.jpg') }}" alt=""/></li>
+    </ul>
   </div>
 @endsection
 @section('script')
