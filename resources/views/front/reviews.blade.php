@@ -29,7 +29,7 @@
 							<a class="span" href="{{ route('front.view.pelicula', $pelicula->id) }}">
 								{{ $pelicula->titulo }}
 							</a>
-							<p class="dirctr"><a href="">Creado </a>{{ $pelicula->created_at->diffForHumans() }}</p>
+							<p class="dirctr">Creado {{ $pelicula->created_at->diffForHumans() }}</p>
 							<p class="ratingview">Critic's Rating:</p>
 							<div class="rating">
 								<span>☆</span>
@@ -108,7 +108,7 @@
 									</tr>
 									<tr>
 										<td>ESTRENO:</td>
-										<td>{{ $pelicula->estreno }}</td>
+										<td>{{ Carbon\Carbon::parse($pelicula->estreno)->formatLocalized('%d de %B de %Y') }}</td>
 									</tr>
 								</table>
 							</div>

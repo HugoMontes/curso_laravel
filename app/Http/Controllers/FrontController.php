@@ -12,9 +12,10 @@ use Cinema\Genero;
 use Cinema\Director;
 
 class FrontController extends Controller{
-
+  // Inicializar carbon en el constructor para cambiar el idioma
   public function __construct(){
     Carbon::setLocale('es');
+    setlocale(LC_TIME, 'Spanish_Bolivia');
   }
 
   public function index(){
