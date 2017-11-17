@@ -284,10 +284,10 @@
                     <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Listar</a>
+                            <a href="{{ route('admin.user.index') }}">Listar</a>
                         </li>
                         <li>
-                            <a href="morris.html">Nuevo</a>
+                            <a href="{{ route('admin.user.create') }}">Nuevo</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
